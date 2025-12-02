@@ -1,0 +1,18 @@
+
+.card {
+    text-align: center;
+    width: 18rem;
+    margin-bottom: 20px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    height: auto;
+}
+.precio{
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}

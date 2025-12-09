@@ -16,13 +16,13 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.password) {
-      alert("Completa todos los campos");
+    if (formData.password.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres.");
       return;
     }
+    alert("Login éxitoso!");
+    console.log("Login éxitoso", formData);
 
-    alert(`Login exitoso: ${formData.email}`);
-    console.log("Datos enviados:", formData);
   };
 
   return (
@@ -52,8 +52,8 @@ function Login() {
           />
         </div>
 
-      </form>
        <Button className="boton" variant="dark" type="submit">Login</Button>
+      </form>
     </div>
   );
 }

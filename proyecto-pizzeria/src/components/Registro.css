@@ -1,0 +1,32 @@
+.contenedor{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.email{
+    display: grid;
+    margin: 10px;
+   
+}
+.email p {
+    color: red;
+    font-size: 0.8rem;
+}
+.contraseña{
+    display: grid;
+    margin: 10px;
+   
+}
+.confirmarContraseña{
+    display: grid;
+    margin: 10px;   
+}
+.boton{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}

@@ -1,0 +1,15 @@
+.contenedor{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    height: 80vh;
+}
+.email{
+    display: grid;
+    margin: 10px;
+   
+}
+.contraseña{
+    display: grid;
+    margin: 10px;
+}

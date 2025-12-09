@@ -5,6 +5,8 @@ import NavBar from './components/NavBar.jsx';
 import Home from './components/Home.jsx';
 import Card from './components/Card.jsx';
 import Footer from './components/Footer.jsx';
+import Registro from './components/Registro.jsx';
+import Login from './components/Login.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +14,8 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Home 
+      {/*<Registro/>
+       <Home 
         title="Bienvenidos a Pizzería Mamma Mia"
         description="¡Tenemos las mejores pizzas que podras encontrar!"
       />
@@ -35,7 +38,8 @@ function App() {
               text="Pepperoni, Mozzarella, Salsa de Tomate, Orégano"
               price="5.950"
               />
-      </div>
+      </div> */}
+      <Login/>
       <Footer/>
     </>
   )

@@ -1,0 +1,19 @@
+.carrito {
+  display: flex !important;   /* fuerza horizontal */
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.imagen {
+  width: 80px;
+}
+
+.info {
+  flex: 1;
+}
+
+.botones {
+  display: flex;
+  gap: 0.5rem;
+}

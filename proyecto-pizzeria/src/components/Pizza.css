@@ -1,0 +1,16 @@
+.pizza-detail {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #030202;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 50px 40px;
+    background-color: #fff;
+}
+
+.pizza-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+}

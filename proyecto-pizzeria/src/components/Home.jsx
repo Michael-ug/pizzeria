@@ -1,8 +1,17 @@
 import './Home.css';
-import pizzas from '../assets/Pizzas';
+import { useState, useEffect } from 'react';
 import CardPizza from './CardPizza'; 
 
 function Home({ title, description }) {
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5001/api/pizzas')
+      .then(res => res.json())
+      .then(data => setPizzas(data))
+      .catch(err => console.error('Error al cargar pizzas:', err));
+  }, []);
+
   return (
     <>
       <div className="home-container">
@@ -14,7 +23,7 @@ function Home({ title, description }) {
 
       <div className="container mt-5">
         <div className="row">
-          {pizzas.map((pizza) => (
+          {pizzas.map(pizza => (
             <div className="col-md-4 mb-4" key={pizza.id}>
               <CardPizza pizza={pizza} />
             </div>

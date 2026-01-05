@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavBar from './components/NavBar.jsx';
 import Home from './components/Home.jsx';
+import Pizza from './components/Pizza.jsx';
 import Card from './components/Card.jsx';
 import Footer from './components/Footer.jsx';
 import Registro from './components/Registro.jsx';
@@ -18,8 +19,9 @@ function App() {
        {/* <Home 
         title="Bienvenidos a Pizzería Mamma Mia"
         description="¡Tenemos las mejores pizzas que podras encontrar!"
-        /> */}
-      <Cart/>  
+      /> */}
+      <Pizza/>
+      {/* <Cart/>   */}
       {/* <Registro/> */}
       {/* <Login/> */}
       <Footer/>

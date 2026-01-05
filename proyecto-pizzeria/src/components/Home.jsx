@@ -22,7 +22,7 @@ function Home({ title, description }) {
       </div>
 
       <div className="container mt-5">
-        <div className="row">
+        <div className="row cardPizza">
           {pizzas.map(pizza => (
             <div className="col-md-4 mb-4" key={pizza.id}>
               <CardPizza pizza={pizza} />

@@ -23,7 +23,7 @@ function Pizza({ pizzaId = "p001" }) {
       <h2>{pizza.name}</h2>
       <img src={pizza.img} alt={pizza.name} className="pizza-image" />
       <p><strong>Ingredientes:</strong> {pizza.ingredients.join(", ")}</p>
-      <p>{pizza.desc}</p>
+      <p><strong>Descripción:</strong> {pizza.desc}</p>
       <p><strong>Precio:</strong> ${pizza.price}</p>
     </div>
   );

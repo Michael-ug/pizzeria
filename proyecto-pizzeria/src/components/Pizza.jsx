@@ -5,10 +5,10 @@ function Pizza({ pizzaId = "p001" }) {
   const [pizza, setPizza] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/pizzas") // Usa el puerto correcto
+    fetch("http://localhost:5001/api/pizzas") 
       .then(res => res.json())
       .then(data => {
-        console.log("Datos recibidos:", data); // Mira en la consola
+        console.log("Datos recibidos:", data); 
         const pizzaFound = data.find(p => p.id === pizzaId);
         console.log("Pizza encontrada:", pizzaFound);
         setPizza(pizzaFound);

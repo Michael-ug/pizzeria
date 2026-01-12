@@ -1,13 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar({ total }) {
   return (
     <Navbar expand="lg" className="barra bg-dark" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Pizzería Mamma Mia</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Pizzería Mamma Mia</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -15,12 +16,15 @@ function NavBar({ total }) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">🍕 Home</Nav.Link>
-            <Nav.Link href="#action2">🔓 Profile</Nav.Link>
-            <Nav.Link href="#action3">🔐 Register</Nav.Link>
+            <Nav.Link as={Link} to="/">🍕 Home</Nav.Link>
+            <Nav.Link as={Link} to="/registro">🔐 Registro</Nav.Link>
+            <Nav.Link as={Link} to="/login">🔓 Login</Nav.Link>
+            <Nav.Link as={Link} to="/profile">👤 Perfil</Nav.Link>
           </Nav>
           <div className="precio d-flex ">
-            <span className="me-2">🛒 Total: ${total}</span>
+            <Link to="/cart" className="text-white text-decoration-none">
+              <span className="me-2">🛒 Total: ${total}</span>
+            </Link>
           </div>
         </Navbar.Collapse>
       </Container>

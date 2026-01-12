@@ -35,7 +35,7 @@ const [formData, setFormData] = useState({
   return (
     <div className="contenedor">
       <form className="registro" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Registrate ahora</h2>
         
       <div className="email">
         <p>Todos los campos son obligatorios</p>

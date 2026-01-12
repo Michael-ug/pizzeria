@@ -1,9 +1,9 @@
 import './Home.css';
 import { useState, useEffect } from 'react';
-import CardPizza from './CardPizza'; 
+import CardPizza from '../components/CardPizza'; 
 
 function Home({ title, description }) {
-  const [pizzas, setPizzas] = useState([]);
+   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5001/api/pizzas')
@@ -11,7 +11,7 @@ function Home({ title, description }) {
       .then(data => setPizzas(data))
       .catch(err => console.error('Error al cargar pizzas:', err));
   }, []);
-
+    
   return (
     <>
       <div className="home-container">

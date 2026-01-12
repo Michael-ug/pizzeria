@@ -18,7 +18,7 @@ function Cart() {
     setCart(
       cart.map((item) =>
         item.id === id
-          ? { ...item, count: item.count > 1 ? item.count - 1 : 1 }
+          ? { ...item, count: item.count > 0 ? item.count - 1 : 0 }
           : item
       )
     );

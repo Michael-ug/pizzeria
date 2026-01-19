@@ -1,10 +1,25 @@
+.contenedor{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px;
+}
+.contenedor-carrito{
+  max-height: 500px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
 .carrito {
   display: flex !important;  
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background-color:#fff;
 }
-
 .imagen {
   width: 80px;
 }

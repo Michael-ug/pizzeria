@@ -13,10 +13,14 @@ import Cart from '../pages/Cart.jsx';
 import Profile from '../components/Profile.jsx';
 import NotFound from '../components/NotFound.jsx';
 
+import { CartProvider } from '../Context/CartContext.jsx';
+
 function App() {
   return (
-    <>
-      <NavBar/> 
+    <CartProvider>
+      <div className='d-flex flex-column min-vh-100'>
+      <NavBar />
+      <div className='flex-grow-1'>
       <Routes>
         <Route
           path="/"
@@ -29,8 +33,10 @@ function App() {
         <Route path="/profile" element={<Profile userEmail="usuario@example.com" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </div>
       <Footer />
-    </>
+      </div>
+    </CartProvider>
   );
 }
 

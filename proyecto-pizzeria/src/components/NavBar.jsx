@@ -3,10 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import { useCart } from '../Context/CartContext.jsx';
 
-function NavBar({ total }) {
+function NavBar() {
+  const { total } = useCart();
+
   return (
-    <Navbar expand="lg" className="barra bg-dark" variant="dark">
+    <Navbar expand="lg" className="barra bg-dark" variant="dark" fixed="top">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">Pizzería Mamma Mia</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

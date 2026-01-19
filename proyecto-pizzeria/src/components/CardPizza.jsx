@@ -1,6 +1,9 @@
 import Pizzas from "../assets/Pizzas";
+import { useCart } from "../Context/CartContext";
 
 function CardPizza({ pizza }) {
+  const { addPizza } = useCart();
+
   return (
     <div className="card h-100">
       <img src={pizza.img} className="card-img-top" alt={pizza.name} />
@@ -20,6 +23,10 @@ function CardPizza({ pizza }) {
         </ul>
 
         <p className="fw-bold">Precio: ${pizza.price}</p>
+
+        <button className="btn btn-primary " onClick={() => addPizza(pizza)}>
+          Agregar al carrito 🛒
+        </button>
       </div>
     </div>
   );

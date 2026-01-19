@@ -1,75 +1,54 @@
-import { useState } from "react";
-import { pizzaCart as initialCart } from "../assets/Pizzas";
+import { useCart } from "../Context/CartContext";
 import "./Cart.css";
 
 function Cart() {
+  const { cart, increase, decrease, total } = useCart(); // ✅ obtenemos el estado global y funciones
 
-  const [cart, setCart] = useState(initialCart);
+  return (
+    <div className="contenedor">
+      <h2>Detalles del pedido</h2>
+      <div className="contenedor-carrito">
+        
+      {cart.length === 0 ? (
+        <p>El carrito está vacío 🛒</p>
+      ) : (
+        cart.map((pizza) => (
+          <div className="carrito" key={pizza.id}>
+            <img className="imagen" src={pizza.img} alt={pizza.name} />
 
-  const handleIncrease = (id) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id ? { ...item, count: item.count + 1 } : item
-      )
-    );
-  };
+            <div className="info">
+              <h5>{pizza.name}</h5>
 
-  const handleDecrease = (id) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id
-          ? { ...item, count: item.count > 0 ? item.count - 1 : 0 }
-          : item
-      )
-    );
-  };
+              <p>
+                Precio: ${pizza.price} x {pizza.count} = $
+                {pizza.price * pizza.count}
+              </p>
 
-  const total = cart.reduce((acc, item) => acc + item.price * item.count, 0);
+              <div className="botones">
+                <button
+                  className="btn btn-sm btn-primary"
+                  onClick={() => decrease(pizza.id)}
+                  >
+                  -
+                </button>
 
-return (
-  <div className="contenedor">
-    <h2>Detalles del pedido</h2>
-
-    {cart.map((pizza) => (
-      <div className="carrito" key={pizza.id}>
-        <img
-          className="imagen"
-          src={pizza.img}
-          alt={pizza.name}
-        />
-
-        <div className="info">
-          <h5>{pizza.name}</h5>
-
-          <p>
-            Precio: ${pizza.price} x {pizza.count} = $
-            {pizza.price * pizza.count}
-          </p>
-
-          <div className="botones">
-            <button
-              className="btn btn-sm btn-primary"
-              onClick={() => handleDecrease(pizza.id)}
-            >
-              -
-            </button>
-
-            <button
-              className="btn btn-sm btn-primary"
-              onClick={() => handleIncrease(pizza.id)}
-            >
-              +
-            </button>
+                <button
+                  className="btn btn-sm btn-primary"
+                  onClick={() => increase(pizza.id)}
+                  >
+                  +
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    ))}
+        ))
+      )}
 
-    <h4>Total: ${total}</h4>
-    <button className="btn btn-dark">Pagar</button>
+      <h4>Total: ${total}</h4>
+      <button className="btn btn-dark">Pagar</button>
+    </div>
   </div>
-);
-
+  );
 }
 
 export default Cart;
